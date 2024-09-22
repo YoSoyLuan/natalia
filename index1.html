@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+	<head>
+		<meta name="google" content="notranslate" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, width=device-width">
+	    <meta name="description" content="Aplicativo Web de BikersTV">
+
+    	<meta name="theme-color" content="#22476c">
+
+	    <base href="https://bikerscolombia.com/">
+
+	    <link rel="icon" href="favicon.ico" type="image/x-icon">
+	    <meta name="theme-color" content="#16537e">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    
+	    <title>BikersTV</title>
+
+	    <link rel="stylesheet" type="text/css" href="css/lib/select2.css">
+	    <link rel="stylesheet" type="text/css" href="css/lib/bootstrap.css">
+	    <link rel="stylesheet" type="text/css" href="css/lib/sweetalert2.min.css">
+	    
+
+	    <script type="text/javascript" src="js/lib/jquery.js"></script>
+	    <script type="text/javascript" src="js/lib/alertifyjs/build/alertify.min.js"></script>
+	    <script type="text/javascript" src="js/lib/select2.js"></script>
+
+		<script type="text/javascript" src="js/main.js?v05"></script>
+
+		<link href="js/lib/alertifyjs/build/css/alertify.min.css" rel="stylesheet">
+		<link href="js/lib/alertifyjs/build/css/themes/bootstrap.min.css" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+		<!--===============================================================================================-->
+			<link rel="stylesheet" type="text/css" href="css/layout.css?v22">
+		<!--===============================================================================================-->
+
+		
+		
+			</head>
+	<body class="bg-body" >
+		<input type="hidden" id="days_reaiming" value="159">
+	    
+	    	<nav class="navbar h-40 fixed-top navbar-expand-sm navbar-dark dark p-0 justify-content-between" >
+				<div class="container-fluid mt-0 pt-0" style="background: radial-gradient(#192831, #312b0a87);">
+
+			        <div class="navbar-collapse collapse dual-nav w-50">
+						<a class="navbar-brand" href="#" id="button_team"><img class="logo_team" src="images/teams/18.png?57" id="logo_custom" alt="logo"></a>
+						
+						
+							<h3 class="navbar-brand font-weight-bold display-1 title_nameuser text-truncate">ANCIZAR SUAREZ</h3><br>
+							
+					</div>
+					
+					<div class="navbar-collapse navbar-expand collapse dual-nav w-50 d-flex justify-content-md-end justify-content-lg-end d-md-block d-lg-bloc sidebar-menu">                 
+			
+		
+	            <ul class="navbar-nav">
+	            	
+	            		            	<li class="nav-item form-inline justify-content-center mt-1 mr-md-3 pr-0">
+		            	<a href="index?channel=bikerstv1" class="link_navbar" title="Reproductor">
+	                    	<span class="material-icons-outlined icon_active  icon_navbar">live_tv</span>
+	                        <h6 class="link_description icon_active ">TV</h6>
+	                    </a>
+	                </li>
+	            		            	<li class="nav-item form-inline mt-2 mx-md-2">
+	                    <a href="shedule" class="link_navbar" title="Programacion">
+	                    	<span class="material-icons-outlined    icon_navbar">event</span>
+	                        <h6 class="link_description  ">
+	                        	Eventos
+                        	</h6>
+	                    </a>
+	                </li>
+					
+	            		                <li class="nav-item form-inline mt-2 px-0">
+	                    <a href="javascript:Fullscreen()" class="link_navbar" title="FullScreen">
+	                    	<span class="material-icons-outlined  icon_navbar">fullscreen</span>
+	                        <h6 class="link_description ">Maximizar</h6>
+	                    </a>
+	                </li>  
+	            						
+	                
+	            		                <li class="nav-item form-inline mt-2 ml-md-2">
+	                    <a href="connections" class="link_navbar" title="Conexion">
+	                    	<span class="material-icons-outlined  icon_navbar">wifi</span>
+	                        <h6 class="link_description  ">
+	                        	Conexi&oacuten
+	                        </h6>
+	                    </a>
+	                </li>
+	            	
+	            	
+	            		                <li class="nav-item form-inline mt-2 pl-0 pt-1 mx-md-1" >
+	                    <a href="#" id="days" class="link_navbar" title="Suscripcion">
+	                    	<span class="text_days text-center ">
+	                    		159	                    	</span>
+	                        <h6 class="link_description   ">Dias</h6>
+	                    </a>
+	                </li>  
+	            		            		            	
+	                	            	
+	                <li class="nav-item form-inline mt-2 pl-0 ml-0">
+	                    <span class="link_navbar" title="Menu" id="menu" onclick="openNav()">
+	                    	<span class="material-icons-outlined  mt-md-1 icon_navbar" >menu</span>
+	                        <h6 class="link_description">Menu</h6>
+	                    </span>
+	                </li> 
+
+	                
+	            </ul>
+			</div>
+				
+			        	
+	        	</div>	
+			</nav>
+	    			    
+		<!-- /.navbar -->
+
+		<!-- MAIN -->
+		<main class="container-fluid flex-fill px-0" >
+
+			<section class="content" style="position: relative; z-index: 1000;
+    margin-top: 100px">
+				<div id="mySidenav" class="sidenav" style="overflow-y: scroll; height: 80vh;">
+				  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+				  	
+					
+	            	
+	                
+                    <a href="index/player" class="link_navbar" title="Reproductor" id="select_player">
+                    	<span class="material-icons-outlined icon_navbar">ondemand_video</span>
+                        <h6 class="link_description">Reproductor</h6>
+                    </a>
+
+        			<a href="index/format" class="link_navbar" title="Formato" id="select_format">
+                    	<span class="material-icons-outlined icon_navbar">description</span>
+                        <h6 class="link_description">Formato</h6>
+                    </a>
+                                        <a href="others/data?tournament=colombia&type=positions" class="link_navbar" title="Serie">
+	                	<span class="material-icons-outlined icon_navbar">list_alt</span>
+	                    <h6 class="link_description">Tabla P.</h6>
+	                </a>
+	            	
+
+                	                	<!--
+                    <a href="index/series" class="link_navbar" title="Serie">
+	                	<span class="material-icons-outlined icon_navbar">tv</span>
+	                    <h6 class="link_description">Adicional</h6>
+	                </a>
+	            	-->
+	            	
+                    <a href="users/password" class="link_navbar" title="Cambiar Clave">
+	                	<span class="material-icons-outlined icon_navbar">vpn_key</span>
+	                    <h6 class="link_description">Cambiar Clave</h6>
+	                </a>
+	            		            	                    <a href="index/logout" class="link_navbar" title="Calidad">
+                    	<span class="material-icons-outlined icon_navbar">cancel</span>
+                        <h6 class="link_description">Salir</h6>
+                    </a>
+                	                    <a href="#" class="link_navbar" title="">
+                    	<span class="material-icons-outlined icon_navbar"></span>
+                        <h6 class="link_description"></h6>
+                    </a>
+                    <a href="#" class="link_navbar" title="">
+                    	<span class="material-icons-outlined icon_navbar"></span>
+                        <h6 class="link_description"></h6>
+                    </a>
+                    <a href="#" class="link_navbar" title="">
+                    	<span class="material-icons-outlined icon_navbar"></span>
+                        <h6 class="link_description"></h6>
+                    </a>
+				</div>
+
+				<div class="mt-1 ">
+			
+<style type="text/css">
+	.play-wrapper[data-poster] svg path { fill: deepskyblue !important;}
+	.spinner-three-bounce[data-spinner]>div {color: deepskyblue !important;}
+	.collapsing { transition: none !important; }
+</style>
+
+<body style="background-image: url('images/estadio2.jpg?v01');" >
+
+<link rel="stylesheet" type="text/css" href="css/index.css?v01">
+<script type="text/javascript" src="js/lib/cast_sender.js"></script>
+<!-- <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script> -->
+
+
+   
+
+
+<script src="players/clappr/clappr.min.js?v02"></script>
+<script src="players/clappr/clappr-chromecast-plugin.js"></script>
+
+<script src="players/clappr/clappr-airplay.min.js"></script>
+<script src="players/clappr/clappr-pip.min.js"></script>
+<script src="players/clappr/level-selector.min.js"></script>
+
+	
+
+
+
+<input type="hidden" name="player"   id="txt_player" value="CLAPPR">
+<input type="hidden" name="format"   id="txt_format" value="HLS">
+<input type="hidden" name="url_link" id="txt_link"   value="https://www.capodeportes.fr/play/winsports.php" allow="encrypted-media" width="100%" height="400" frameborder="0">
+
+<!-- https://github.com/soarHero/hls/blob/master/receiver.hls.html -->
+	 <div class="col-12 d-flex justify-content-center pb-0 mb-2" >
+			<h6 class="text-secondary">6 MESES X 20 MIL PESOS!</h6>
+		</div>
+
+
+<div class="col-12 d-flex justify-content-center border_bottom" >
+<!--
+<br />
+<b>Notice</b>:  Trying to get property 'estimated_count' of non-object in <b>/var/www/html/app/views/index/index.phtml</b> on line <b>97</b><br />
+</div>
+-->
+
+<a href="index?channel=bikerstv1" class="tabalert active mr-3">
+	TV 1
+</a>
+
+<a href="index?channel=bikerstv2" class="tabalert inactive mr-3">
+	TV 2
+</a>
+
+<a href="index?channel=bikerstv3" class="tabalert inactive mr-3">
+	TV 3
+</a>
+
+<a href="index?channel=bikerstv4" class="tabalert inactive mr-3">
+	TV 4
+</a>
+<!--
+<a href="index?channel=bikerstv5" class="tabalert inactive mr-3">
+	TV 5
+</a>
+
+<a href="index?channel=bikerstv6" class="tabalert inactive mr-3">
+	TV 6
+</a>
+-->
+
+</div>
+
+<div class="col-12 ml-1 mb-1 d-flex justify-content-center" style="margin-top: 20px;">
+	<div class="d-flex justify-content-center">
+
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>					
+					<td>
+						<span id="chromecast_button" style="font-size:30px; margin-top: 5px;color: #87825e;" class="ml-3 mr-3 material-icons-outlined">
+						cast</span>
+					</td>
+					<td  style="border-left: 1px dashed #87825e;">
+						<div class="button b2 mx-3" id="button-10" style="margin-top: 0px">
+						  <input type="checkbox" class="checkbox" id="check_quality" 
+						  	checked >
+						  <div class="knobs " >
+						    <span>HD</span>
+						  </div>
+						  <div class="layer "></div>
+						</div>
+					</td>
+					<td  style="border-left: 1px dashed #87825e;">
+						<div class="button b2 mx-3" id="button-10" style="margin-top: 0px">
+						  <input type="checkbox" class="checkbox" id="check_quality2" 
+						  	 >
+						  <div class="knobs ip inactive" >
+						    <span>HD2</span>
+						  </div>
+						  <div class="layer inactive"></div>
+						</div>
+					</td>
+					<td style="border-left: 1px dashed #87825e;">
+						<span style="font-size:30px; margin-top: 5px;color: #87825e" onclick="location.reload();" class="ml-3 material-icons-outlined">sync</span>
+					</td>
+				</tr>		
+			</tbody>
+		</table>
+	</div>
+	
+</div>
+
+<div class="col-md-9 col-12 mx-auto px-0">
+    <div class="embed-responsive embed-responsive-4by3">        
+        <div class="embed-responsive-item" id="div_video">
+
+        	
+	        		            	<div id="player-container" class="embed-responsive-item"></div>
+	        	
+	        	
+	        	
+	        	
+	        	
+	        	
+	        
+        </div>    
+    </div>
+</div>
+
+
+	<script type="text/javascript">$.getScript('js/players.js?v07');</script>
+
+<script type="text/javascript">
+	var ckseiou = '3';
+	var format  = $('#txt_format').val();
+</script>
+
+
+<script type="text/javascript">
+	$.getScript('js/index.js?07');
+</script>
+
+
+<script type="text/javascript">
+	  var playerElement = document.getElementById("player-container");
+    var retry = 4;
+    var ErrorPlugin = Clappr.ContainerPlugin.extend({
+      name: 'error_plugin',
+      background: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoBAMAAAA1HFdiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAG1BMVEX5+fn//wAA//8A/wD/AP//AAAAAP8XFxf///8H5gWfAAAAAWJLR0QIht6VegAAAAd0SU1FB98IBRIsAXmGk48AAAI5SURBVHja7dJBDYBADADBs4AFLGABC1iohbOPhv1BMvu+NLlp10odqTN1pe7Uk5pQ8wMIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECDA/wKWxzM71T7ZZrfltNnppgACBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAL8B+ALjSfYzPnmdzgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOC0wNVQxODo0NDowMSswMTowMCL95a4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDgtMDVUMTg6NDQ6MDErMDE6MDBToF0SAAAAAElFTkSuQmCC',
+      bindEvents: function() { this.listenTo(this.container, Clappr.Events.CONTAINER_ERROR, this.onError) },
+      hide: function() { this._err && this._err.remove() },
+      show: function() {
+        var $ = Clappr.$
+        this.hide();
+        var txt = (this.options.errorPlugin && this.options.errorPlugin.text) ? this.options.errorPlugin.text : 'Error de conexion con el video.';
+        this._err = $('<div>')
+          .css({
+            'position': 'absolute',
+            'z-index': '999',
+            'width': '100%',
+            'height': '100%',
+            'background-image': 'url(' + this.background + ')',
+            'background-size': 'contain',
+            'background-repeat': 'no-repeat',
+            'padding-top': '15%',
+            'text-align': 'center',
+            'font-weight': 'bold',
+            'text-shadow': '1px 1px #fff',
+            'color':'black'
+          })
+          .append($('<h2>')
+            .text(txt)
+            .css({
+              'font-size': '200%',
+            }))
+          .append($('<p>').html('Reintentando conectarse en <span class="retry-counter">5</span> segundos ...')
+            .css({
+              'font-size': '120%',
+              'margin': '15px',
+            }));
+        this.container && this.container.$el.prepend(this._err);
+      },
+      onError: function(e) {
+        if (!this.container) return;
+        this.show();
+        this.container.getPlugin('click_to_pause').disable();
+        var tid, t = 5, retry = function() {
+          clearTimeout(tid);
+          if (t === 0) {
+            this.container.getPlugin('click_to_pause').enable();
+            if (this.options.errorPlugin && this.options.errorPlugin.onRetry) {
+              this.options.errorPlugin.onRetry(e);
+              return;
+            } else {
+              this.container.stop();
+              this.container.play();
+              return;
+            }
+          }
+          $('.retry-counter').text(t);
+          t--;
+          tid = setTimeout(retry, 1000);
+        }.bind(this);
+        retry();
+      }
+    });
+
+
+    if(format == 'DASH'){
+    	var variable_plugins = [ErrorPlugin,ChromecastPlugin,LevelSelector,ClapprPip.PipButton,ClapprPip.PipPlugin,DashShakaPlayback];
+	  }else{
+	  	var variable_plugins = [ErrorPlugin,ChromecastPlugin,LevelSelector,ClapprPip.PipButton,ClapprPip.PipPlugin];
+	  }
+
+    options = {
+        source: '"https://www.capodeportes.fr/play/winsports.php" allow="encrypted-media" width="100%" height="400" frameborder="0"',     
+        parentId: '#player-container',
+        disableErrorScreen: true,
+        autoplay: true,
+        buffering: true,
+        playinline:true,
+        poster: 'images/logo_player.png',
+        fullscreenEnabled:'true',
+        hideMediaControl: 'false',
+        fullscreenEnabled: 'true',
+        plugins: variable_plugins,
+        disableVideoTagContextMenu: true,
+        width: '100%',
+        height: '80%',
+        mediacontrol: {seekbar: "#000", buttons: "#f8e116"},
+        language: 'es-CO',
+        strings: {
+            'es-CO': {
+              'live': ' BIKERSTV',
+              'playback_not_supported': 'Su navegador web, no soporta la reproducción de este video. Por favor, intente usar un navegador web diferente.'
+             }
+        },
+        chromecast: {
+          appId: '9DFB77C0',
+          media: {
+              type: ChromecastPlugin.Movie,
+              title: 'BikersTV',
+              subtitle: 'Disfruta nuestro aplicativo, Futbol y mas'
+            }
+        },          
+        levelSelectorConfig: {
+            title: 'Quality',
+            labels: {
+                7: '',
+                6: '',
+                5: '',
+                4: '',
+                3: '',
+                2: '', // 500kbps
+                1: '', // 
+                0: '', // 720
+            },
+            labelCallback: function(playbackLevel, customLabel) {
+                return customLabel + playbackLevel.level.height+'p'; // High 720p
+            }
+        },
+        errorPlugin: {
+            onRetry: function(e) {
+              window.location.reload(true);
+            }
+        },
+        events: {
+            onReady: function() { var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();
+            },
+            onError: function(e) {
+                console.log("ON ERROR");
+                console.log(e);
+            },
+        },
+    }
+    
+    var player = new Clappr.Player( options );
+    player.play();
+    
+    if (navigator.userAgent.match('Android')) {
+        player.on('fullscreen', function(isFullscreen) {
+            if (isFullscreen) {
+                screen.orientation.lock('landscape');
+            }
+        });
+    };
+</script>
+
+
+
+<script type="text/javascript">
+	
+function Fullscreen() {
+    var player_app = $('#txt_player').val();
+    
+    switch (player_app){
+        case 'CLAPPR':
+            $('[aria-label="fullscreen"]').click();
+            break;
+        case 'VIDEOJS':
+            $('.vjs-fullscreen-control').click();
+            break;
+        case 'JWPLAYER':
+            jwplayer().setFullscreen(true);
+            break;
+        case 'MEDIAELEMENT':
+            $('[aria-label="Fullscreen"]').click();
+            break;
+        case 'PLYR':
+            $('[data-plyr="fullscreen"]').click();
+            break;
+     }
+}
+</script>
+
+
+
+</body>				</div>
+
+			</section>
+
+		</main>
+
+		<script type="text/javascript" src="js/lib/bootstrap-popper.js"></script>
+	    <script type="text/javascript" src="js/lib/bootstrap.js"></script>
+	    <script type="text/javascript" src="js/lib/bootstrap-toggle.js"></script>
+
+	    <form id="playerForm" class="d-none" action="index/set_player" method="POST">
+		    <fieldset>
+		        <div class="form-group">
+				    <label>Seleccione el reproductor de video:</label>
+				    <select name="player" class="form-control">
+				    	<option value="CLAPPR" 		  selected >CLAPPR</option>
+				    	<option value="VIDEOJS" 	   >VIDEOJS</option>
+				    	<option value="JWPLAYER"	   >JWPLAYER</option>
+				    	<option value="MEDIAELEMENT"   >MEDIAELEMENT</option>
+				    	<option value="PLYR"  		   >PLYR</option>
+				    </select>
+				 </div>
+		    </fieldset>
+		</form>
+
+		<form id="formatForm" class="d-none" action="index/set_format" method="POST">
+		    <fieldset>
+		        <div class="form-group">
+				    <label>Seleccione el formato de video:</label>
+				    <select name="format" class="form-control">
+				    	<option value="HLS"  selected >HLS</option>
+				    	<option value="DASH"  >DASH</option>
+				    </select>
+				 </div>
+		    </fieldset>
+		</form>
+
+		<script type="text/javascript">
+		  if('serviceWorker' in navigator) {
+		    navigator.serviceWorker.register('service_worker.js')
+		      .then(function(registration) {
+		          /* NOOP */
+		        });
+		        
+		        navigator.serviceWorker.ready.then(function(registration) {
+		            /* NOOP */
+		        });
+		    }
+		    let wakeLock = null;
+
+			const requestWakeLock = async () => {
+			  try {
+			    wakeLock = await navigator.wakeLock.request('screen');
+
+			    wakeLock.addEventListener('release', () => {
+			      console.log('Wake Lock was released');
+			    });
+			    console.log('Wake Lock is active');
+			  }
+			  catch(err) {
+			    console.error(`${err.name}, ${err.message}`);
+			  }
+			};
+		</script>
+		
+	</body>
+</html>
